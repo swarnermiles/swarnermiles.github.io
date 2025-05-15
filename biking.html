@@ -41,10 +41,25 @@
       gap: 20px;
       margin-bottom: 40px;
     }
+    .gallery-item {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .gallery-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     .gallery img {
       width: 100%;
       border: 3px solid #ccc;
       box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .caption {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
     }
     .strava-embeds iframe {
       width: 100%;
@@ -75,9 +90,18 @@
     <h1>Racing & Riding</h1>
 
     <div class="gallery">
-      <img src="images/bike1.jpg" alt="Racing Photo 1">
-      <img src="images/bike2.jpg" alt="Racing Photo 2">
-      <img src="images/bike3.jpg" alt="Racing Photo 3">
+      <div class="gallery-item">
+        <img src="images/bike1.jpg" alt="Race start">
+        <div class="caption">Charging off the start line at the Sonoma County Classic</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/bike2.jpg" alt="Mid-race descent">
+        <div class="caption">Technical descent section during enduro stage 2</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/bike3.jpg" alt="Finish line">
+        <div class="caption">Crossing the finish with a PR and muddy face</div>
+      </div>
     </div>
 
     <div class="strava-embeds">
@@ -86,5 +110,19 @@
       <iframe src="https://www.strava.com/activities/your_activity_id/embed/" allowtransparency="true"></iframe>
     </div>
   </div>
+
+  <script>
+    // Animate gallery items on scroll
+    const items = document.querySelectorAll('.gallery-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    items.forEach(item => observer.observe(item));
+  </script>
 </body>
 </html>
