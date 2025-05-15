@@ -1,10 +1,10 @@
-<!-- Suspension Dyno Detail Page -->
+<!-- Projects Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suspension Dyno | Miles Swarner</title>
+  <title>Projects | Miles Swarner</title>
   <link rel="stylesheet" href="style.css">
   <style>
     body {
@@ -20,57 +20,81 @@
       background-color: #f4f4f4;
       border-bottom: 2px solid #ccc;
     }
-    header a {
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    a {
       text-decoration: none;
       color: black;
-      font-size: 1.5rem;
     }
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 40px 20px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px;
     }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
-    .tags {
-      margin-bottom: 20px;
-      font-size: 1rem;
-      color: #666;
-    }
-    img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
+    .project {
       border: 2px solid #ccc;
-      margin-bottom: 20px;
+      background: #fff;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
     }
-    p {
-      line-height: 1.6;
-      font-size: 1.1rem;
+    .project:hover {
+      transform: scale(1.05);
+    }
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 2px solid #ccc;
+    }
+    .project .content {
+      padding: 15px;
+    }
+    .project h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.2rem;
+    }
+    .project p {
+      font-size: 1rem;
+      margin: 0;
     }
   </style>
 </head>
 <body>
   <header>
-    <a href="projects.html">← Back to Projects</a>
-    <a href="index.html">Home</a>
+    <h1><a href="index.html">← Miles Swarner</a></h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
   </header>
 
-  <div class="container">
-    <h1>Suspension Dyno</h1>
-    <div class="tags">Arduino • Mechanical Engineering • Data Acquisition • Bike Testing</div>
-    <img src="images/notable1.jpg" alt="Suspension Dyno">
-    <p>
-      This Arduino-powered suspension dynamometer was designed and built to analyze the compression and rebound characteristics of mountain bike rear shocks. The test rig uses an S-type load cell to measure force and a magnetic rotary encoder to measure displacement, synchronized via serial output. A Scotch yoke drive system ensures smooth cyclic motion.
-    </p>
-    <p>
-      Python is used to parse the incoming serial data in real time, generating live force vs. velocity and force vs. displacement plots. The system allows tuners and riders to visualize damping curves and optimize setup. All components were prototyped, CNC machined, and integrated over several months as a senior capstone project.
-    </p>
-    <p>
-      Future plans include motorized automation, battery integration, and open-sourcing the final design for DIY enthusiasts.
-    </p>
-  </div>
+  <main>
+    <div class="grid">
+      <div class="project">
+        <img src="images/notable1.jpg" alt="Project 1">
+        <div class="content">
+          <h3>Suspension Dyno</h3>
+          <p>Arduino-powered test rig for mountain bike rear shocks, using load cells and encoders.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="images/notable2.jpg" alt="Project 2">
+        <div class="content">
+          <h3>HVAC Automation</h3>
+          <p>ESP32-controlled home heating logic that responds to open windows and user rules.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="images/notable3.jpg" alt="Project 3">
+        <div class="content">
+          <h3>Third Project</h3>
+          <p>Insert Description When Ready</p>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
