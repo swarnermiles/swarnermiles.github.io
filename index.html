@@ -1,184 +1,149 @@
-<!-- Miles Swarner Project Portfolio (2025) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miles Swarner Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miles Swarner | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
       font-family: Copperplate, serif;
+      background-color: #fefefe;
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 30px 40px;
+      padding: 20px 40px;
       background-color: #f4f4f4;
-      font-size: 1.5rem;
-      border-bottom: 2px solid #ddd;
+      border-bottom: 2px solid #ccc;
     }
-    header h1 {
+    h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
-    .dropdown {
+    .menu {
       position: relative;
       display: inline-block;
     }
-    .dropdown-button {
-      background-color: #ccc;
-      border: none;
-      padding: 14px 24px;
-      font-size: 1rem;
+    .menu-button {
+      font-size: 1.2rem;
       cursor: pointer;
     }
-    .dropdown-content {
+    .menu-content {
       display: none;
       position: absolute;
       right: 0;
       background-color: #fff;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      min-width: 180px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       z-index: 1;
     }
-    .dropdown-content a {
-      color: black;
-      padding: 14px 18px;
+    .menu-content a {
+      display: block;
+      padding: 12px 16px;
       text-decoration: none;
+      color: black;
+    }
+    .menu:hover .menu-content {
       display: block;
     }
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    #welcome {
+    .intro {
       display: flex;
-      flex-wrap: wrap;
-      padding: 40px;
-      background-color: #fafafa;
-      border-bottom: 2px solid #ddd;
-    }
-    #welcome img {
-      flex: 1 1 40%;
-      max-width: 100%;
-      border: 3px solid #ccc;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-      margin-left: auto;
-    }
-    #welcome p {
-      flex: 1 1 50%;
-      font-size: 1.5rem;
-      padding: 20px;
-      border: 2px solid #ccc;
-      background-color: #fff;
-      margin-right: auto;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-    }
-
-    #highlights {
-      padding: 40px;
-      background-color: #fff;
-    }
-    #highlights h2 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .carousel-container {
-      width: 100%;
-      overflow-x: auto;
-      overflow-y: hidden;
-      white-space: nowrap;
-      display: flex;
+      padding: 60px;
+      justify-content: space-between;
       align-items: center;
-      gap: 20px;
+    }
+    .intro-text {
+      flex: 1;
+      font-size: 1.2rem;
+      padding-right: 40px;
+    }
+    .headshot {
+      flex: 1;
+      max-width: 400px;
+      border: 2px solid #ccc;
+      box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+    }
+    .highlights {
+      margin: 40px;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
       scroll-behavior: smooth;
-      padding: 20px;
-      box-sizing: border-box;
+      gap: 20px;
     }
-    .carousel-container::-webkit-scrollbar {
-      height: 12px;
+    .carousel::-webkit-scrollbar {
+      height: 8px;
     }
-    .carousel-container::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 6px;
-    }
-    .carousel-container::-webkit-scrollbar-track {
-      background: #f1f1f1;
+    .carousel::-webkit-scrollbar-thumb {
+      background-color: #aaa;
+      border-radius: 4px;
     }
     .carousel-item {
-      display: inline-block;
-      width: 240px;
-      height: 240px;
-      flex-shrink: 0;
-      border: 3px solid #ccc;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease-in-out;
+      flex: 0 0 auto;
+      width: 300px;
+      height: 200px;
+      border: 2px solid #ccc;
+      transition: transform 0.3s ease;
+      cursor: pointer;
     }
     .carousel-item:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
       z-index: 2;
     }
     .carousel-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: opacity 0.3s ease-in-out;
-    }
-    .carousel-item img:hover {
-      opacity: 1;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #f4f4f4;
-      border-top: 2px solid #ddd;
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
+
   <header>
     <h1>Miles Swarner, 2025</h1>
-    <div class="dropdown">
-      <button class="dropdown-button">Menu</button>
-      <div class="dropdown-content">
+    <div class="menu">
+      <div class="menu-button">Menu ▾</div>
+      <div class="menu-content">
         <a href="projects.html">Projects</a>
-        <a href="#resume">Resume</a>
-        <a href="#biking">Biking</a>
-        <a href="#music">Music</a>
-        <a href="#contact">Get in Touch</a>
+        <a href="resume.html">Resume</a>
+        <a href="biking.html">Biking</a>
+        <a href="music.html">Music</a>
+        <a href="contact.html">Get in Touch</a>
       </div>
     </div>
   </header>
 
-  <!-- WELCOME SECTION -->
-  <section id="welcome">
-    <p>"Brief description and welcome"</p>
-    <img src="images/headshot.jpg" alt="Headshot of Miles">
+  <section class="intro">
+    <div class="intro-text">
+      <p>Welcome! I'm Miles Swarner, a mechanical engineering student with a passion for hands-on projects, bikes, and music. This site showcases some of my favorite builds and research.</p>
+    </div>
+    <img src="images/headshot.jpg" alt="Miles Swarner Headshot" class="headshot">
   </section>
 
-  <!-- HIGHLIGHTS SECTION -->
-  <section id="highlights">
-    <h2>Highlights</h2>
-    <div class="carousel-container" id="carousel">
-      <a class="carousel-item" href="#"><img src="images/highlight1.jpg" alt="Highlight 1"></a>
-      <a class="carousel-item" href="#"><img src="images/highlight2.jpg" alt="Highlight 2"></a>
-      <a class="carousel-item" href="#"><img src="images/highlight3.jpg" alt="Highlight 3"></a>
-      <a class="carousel-item" href="#"><img src="images/highlight4.jpg" alt="Highlight 4"></a>
-      <a class="carousel-item" href="#"><img src="images/highlight5.jpg" alt="Highlight 5"></a>
+  <section class="highlights">
+    <h2 style="text-align: center;">Highlighted Projects</h2>
+    <div class="carousel">
+      <a href="dyno_detail.html" class="carousel-item">
+        <img src="images/highlight1.jpg" alt="Dyno Project">
+      </a>
+      <a href="hvac_detail.html" class="carousel-item">
+        <img src="images/highlight2.jpg" alt="HVAC Project">
+      </a>
+      <a href="cadbike_detail.html" class="carousel-item">
+        <img src="images/highlight3.jpg" alt="CAD Bike Project">
+      </a>
+      <a href="highlight4.html" class="carousel-item">
+        <img src="images/highlight4.jpg" alt="Project 4">
+      </a>
+      <a href="highlight5.html" class="carousel-item">
+        <img src="images/highlight5.jpg" alt="Project 5">
+      </a>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer id="contact">
-    <p>Get in touch: <a href="mailto:swarner.miles@gmail.com">swarner.miles@gmail.com</a></p>
-  </footer>
 </body>
 </html>
