@@ -1,0 +1,156 @@
+<!-- Music Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music | Miles Swarner</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Copperplate, serif;
+      background-color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #f4f4f4;
+      border-bottom: 2px solid #ccc;
+    }
+    header a {
+      text-decoration: none;
+      color: black;
+      font-size: 1.5rem;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-button {
+      background-color: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      min-width: 180px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: black;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
+    .bio {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .music-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .music-section iframe {
+      max-width: 100%;
+      width: 640px;
+      height: 360px;
+      border: none;
+      margin: 20px auto;
+      display: block;
+    }
+    .caption {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .arrangements {
+      margin-top: 60px;
+    }
+    .arrangements h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    .arrangements ul {
+      list-style-type: none;
+      padding-left: 0;
+      text-align: center;
+    }
+    .arrangements li {
+      margin: 10px 0;
+    }
+    .arrangements a {
+      text-decoration: underline;
+      color: #000;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Miles Swarner</a>
+    <div class="dropdown">
+      <button class="dropdown-button">Menu ▾</button>
+      <div class="dropdown-content">
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="biking.html">Biking</a>
+        <a href="music.html">Music</a>
+        <a href="contact.html">Get in Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>My Music</h1>
+
+    <div class="bio">
+      I've been playing viola since the fifth grade, participating in school orchestras, regional honor ensembles, and solo recitals. Music is both a creative outlet and a personal passion I balance alongside my engineering work.
+    </div>
+
+    <div class="music-section">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" allowfullscreen></iframe>
+      <div class="caption">filler</div>
+    </div>
+
+    <div class="music-section">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID2" allowfullscreen></iframe>
+      <div class="caption">filler</div>
+    </div>
+
+    <div class="arrangements">
+      <h2>Arrangements & Transcriptions</h2>
+      <ul>
+        <li><a href="files/filler.pdf" target="_blank">filler.pdf</a></li>
+        <li><a href="files/filler.pdf" target="_blank">filler.pdf</a></li>
+        <li><a href="files/filler.pdf" target="_blank">filler.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
