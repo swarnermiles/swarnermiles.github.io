@@ -155,18 +155,19 @@
 </head>
 <body>
   <header>
-    <a href="index.html">← Miles Swarner</a>
-    <div class="dropdown">
-      <button class="dropdown-button">Menu ▾</button>
-      <div class="dropdown-content">
-        <a href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a href="biking.html">Biking</a>
-        <a href="music.html">Music</a>
-        <a href="contact.html">Get in Touch</a>
-      </div>
+  <a href="index.html">← Miles Swarner</a>
+  <nav style="position: relative;">
+    <button onclick="document.getElementById('menu').classList.toggle('show')">Menu</button>
+    <div id="menu" class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="biking.html">Biking</a>
+      <a href="music.html">Music</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Get in Touch</a>
     </div>
-  </header>
+  </nav>
+</header>
 
   <div class="container">
     <h1>Racing & Riding</h1>
@@ -190,26 +191,15 @@
   </div>
 
   <script>
-    window.addEventListener("click", function(e) {
-      if (!e.target.matches("button")) {
-        var menu = document.getElementById("menu");
-        if (menu && menu.classList.contains("show")) {
-          menu.classList.remove("show");
-        }
+  window.addEventListener("click", function(e) {
+    if (!e.target.matches("button")) {
+      var menu = document.getElementById("menu");
+      if (menu && menu.classList.contains("show")) {
+        menu.classList.remove("show");
       }
-    });
-
-    const items = document.querySelectorAll('.gallery-item');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    items.forEach(item => observer.observe(item));
-  </script>
+    }
+  });
+</script>
 <footer>
   © 2025 Miles Swarner • Website designed and built by Miles Swarner<br>
   Contact: <a href="mailto:swarner.miles@gmail.com">swarner.miles@gmail.com</a>
