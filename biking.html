@@ -7,22 +7,64 @@
   <title>Biking | Miles Swarner</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    nav button {
+      background-color: #444;
+      color: #fff;
+      border: none;
+      padding: 14px 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border-radius: 4px;
+      min-width: 120px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: #333;
+      border: 1px solid #555;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      font-family: Copperplate, serif;
+      animation: fadeIn 0.3s ease;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 12px 20px;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+    .dropdown-content a:hover {
+      background-color: #555;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     body {
       margin: 0;
       font-family: Copperplate, serif;
-      background-color: #fff;
+      background-color: #fefefe;
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: #f4f4f4;
-      border-bottom: 2px solid #ccc;
+      background-color: #222;
+      border-bottom: 2px solid #444;
     }
     header a {
       text-decoration: none;
-      color: black;
+      color: #ccc;
       font-size: 1.5rem;
     }
     .dropdown {
@@ -98,60 +140,68 @@
       margin: 0 auto 40px auto;
       display: block;
     }
-  </style>
+      footer {
+      background: #222;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 1rem;
+      border-top: 2px solid #444;
+      color: #ccc;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+    }
+</style>
 </head>
 <body>
   <header>
-    <a href="index.html">← Miles Swarner</a>
-    <div class="dropdown">
-      <button class="dropdown-button">Menu ▾</button>
-      <div class="dropdown-content">
-        <a href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a href="biking.html">Biking</a>
-        <a href="music.html">Music</a>
-        <a href="contact.html">Get in Touch</a>
-      </div>
+  <a href="index.html">← Miles Swarner</a>
+  <nav style="position: relative;">
+    <button onclick="document.getElementById('menu').classList.toggle('show')">Menu</button>
+    <div id="menu" class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="biking.html">Biking</a>
+      <a href="music.html">Music</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Get in Touch</a>
     </div>
-  </header>
+  </nav>
+</header>
 
   <div class="container">
     <h1>Racing & Riding</h1>
 
     <div class="gallery">
-      <div class="gallery-item">
-        <img src="images/bike1.jpg" alt="filler alt descrip">
-        <div class="caption">filler caption</div>
+  <img src="images/biking/bikingracing (1).JPEG" alt="Racing photo 1">
+  <img src="images/biking/bikingracing (2).JPEG" alt="Racing photo 2">
+  <img src="images/biking/bikingracing (3).JPEG" alt="Racing photo 3">
+  <img src="images/biking/bikingracing (4).JPEG" alt="Racing photo 4">
+</div>
       </div>
-      <div class="gallery-item">
-        <img src="images/bike2.jpg" alt="filler alt descrip">
-        <div class="caption">filler caption</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/bike3.jpg" alt="filler alt descrip">
-        <div class="caption">filler caption</div>
+      
       </div>
     </div>
 
     <div class="strava-embeds">
-      <!-- Replace URLs with your real Strava activity embed links -->
-      <iframe src="https://www.strava.com/activities/your_activity_id/embed/" allowtransparency="true"></iframe>
-      <iframe src="https://www.strava.com/activities/your_activity_id/embed/" allowtransparency="true"></iframe>
-    </div>
+  <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="12471588785" data-style="standard" data-from-embed="false"></div>
+  <script src="https://strava-embeds.com/embed.js"></script>
+</div>
   </div>
 
   <script>
-    // Animate gallery items on scroll
-    const items = document.querySelectorAll('.gallery-item');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    items.forEach(item => observer.observe(item));
-  </script>
+  window.addEventListener("click", function(e) {
+    if (!e.target.matches("button")) {
+      var menu = document.getElementById("menu");
+      if (menu && menu.classList.contains("show")) {
+        menu.classList.remove("show");
+      }
+    }
+  });
+</script>
+<footer>
+  © 2025 Miles Swarner • Website designed and built by Miles Swarner<br>
+  Contact: <a href="mailto:swarner.miles@gmail.com">swarner.miles@gmail.com</a>
+</footer>
 </body>
 </html>

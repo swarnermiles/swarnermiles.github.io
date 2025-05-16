@@ -7,6 +7,48 @@
   <title>Resume | Miles Swarner</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    nav button {
+      background-color: #444;
+      color: #fff;
+      border: none;
+      padding: 14px 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border-radius: 4px;
+      min-width: 120px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: #333;
+      border: 1px solid #555;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      font-family: Copperplate, serif;
+      animation: fadeIn 0.3s ease;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 12px 20px;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+    .dropdown-content a:hover {
+      background-color: #555;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     body {
       margin: 0;
       font-family: Copperplate, serif;
@@ -17,12 +59,12 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: #f4f4f4;
-      border-bottom: 2px solid #ccc;
+      background-color: #222;
+      border-bottom: 2px solid #444;
     }
     header a {
       text-decoration: none;
-      color: black;
+      color: #ccc;
       font-size: 1.5rem;
     }
     .container {
@@ -57,31 +99,54 @@
       height: 100vh;
       border: 2px solid #ccc;
     }
-  </style>
+      footer {
+      background: #222;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 1rem;
+      border-top: 2px solid #444;
+      color: #ccc;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+    }
+</style>
+<script>
+    window.addEventListener("click", function(e) {
+      if (!e.target.matches("button")) {
+        var menu = document.getElementById("menu");
+        if (menu && menu.classList.contains("show")) {
+          menu.classList.remove("show");
+        }
+      }
+    });
+  </script>
 </head>
 <body>
   <header>
     <a href="index.html">← Miles Swarner</a>
-    <div class="dropdown">
-      <button class="dropdown-button">Menu</button>
-      <div class="dropdown-content">
+    <nav style="position: relative;">
+      <button onclick="document.getElementById('menu').classList.toggle('show')">Menu</button>
+      <div id="menu" class="dropdown-content">
+        <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a href="#biking">Biking</a>
-        <a href="#music">Music</a>
-        <a href="#contact">Get in Touch</a>
+        <a href="biking.html">Biking</a>
+        <a href="music.html">Music</a>
+        <a href="contact.html">Get in Touch</a>
       </div>
-    </div>
+    </nav>
   </header>
 
   <div class="container">
     <h1>My Resume</h1>
     <div class="button-bar">
-      <a href="https://docs.google.com/document/d/your-doc-id/export?format=pdf" target="_blank">Download PDF</a>
+      <a href="https://docs.google.com/document/d/1ZBk-RT51UiJFl8ElN1MURLIn7I7cpo5sF0Em0z82vrE/export?format=pdf" target="_blank">Download PDF</a>
     </div>
-    <a href="https://docs.google.com/document/d/your-doc-id/view" target="_blank">
-      <iframe class="resume-frame" src="https://docs.google.com/document/d/your-doc-id/preview"></iframe>
-    </a>
+    <iframe class="resume-frame" src="https://docs.google.com/document/d/e/2PACX-1vTEr9-Nk_fBakTntU5KjjHf6hZy1wl2U0QSRReBgq9UotJi4n39sOx_ny7SFE_WtwdIqI1JEaPTwLih/pub?embedded=true"></iframe>
   </div>
+<footer>
+  © 2025 Miles Swarner • Website designed and built by Miles Swarner<br>
+  Contact: <a href="mailto:swarner.miles@gmail.com">swarner.miles@gmail.com</a>
+</footer>
 </body>
 </html>
