@@ -8,10 +8,12 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body {
-      margin: 0;
-      font-family: Copperplate, serif;
-      background-color: #fefefe;
-    }
+  margin: 0;
+  font-family: Copperplate, serif;
+  background-color: #fefefe;
+  width: 100%;
+  box-sizing: border-box;
+}
     header {
       display: flex;
       justify-content: space-between;
@@ -69,12 +71,14 @@
     .spacer {
       height: 60px;
     }
-    .iframe-container, .model-container {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 60px;
-    }
+    ..iframe-container, .model-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
     $1padding: 40px 20px 60px;
       scroll-behavior: smooth;
     }
@@ -113,13 +117,15 @@ $2
       box-shadow: 0 0 20px black;
     }
     footer {
-      background: #f4f4f4;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      border-top: 2px solid #ccc;
-      color: #444;
-    }
+  background: #f4f4f4;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1rem;
+  border-top: 2px solid #ccc;
+  color: #444;
+  width: 100%;
+  box-sizing: border-box;
+}
   </style>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
