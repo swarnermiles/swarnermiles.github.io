@@ -153,7 +153,29 @@
   box-sizing: border-box;
   position: relative;
 }
-  </style>
+      .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: #333;
+      border: 1px solid #555;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      font-family: Copperplate, serif;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 16px;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .dropdown-menu.show {
+      display: block;
+    }
+</style>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const modal = document.createElement('div');
@@ -184,7 +206,7 @@
   </div>
   <nav style="position: relative;">
     <button onclick="document.getElementById('menu').classList.toggle('show')" style="background-color: #444; color: #fff; border: none; padding: 10px 16px; font-size: 0.9rem; cursor: pointer; border-radius: 4px;">Menu</button>
-    <div id="menu" style="display: none; position: absolute; right: 0; top: 100%; background-color: #333; border: 1px solid #555; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+    <div id="menu" class="dropdown-menu">
       <a href="index.html" style="display: block; padding: 10px 16px; color: #fff; text-decoration: none;">Home</a>
       <a href="biking.html" style="display: block; padding: 10px 16px; color: #fff; text-decoration: none;">Biking</a>
       <a href="music.html" style="display: block; padding: 10px 16px; color: #fff; text-decoration: none;">Music</a>
