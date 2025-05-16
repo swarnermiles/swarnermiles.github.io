@@ -143,15 +143,16 @@
       box-shadow: 0 0 20px black;
     }
     footer {
-      background: #f4f4f4;
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 1rem;
-      border-top: 2px solid #ccc;
-      color: #444;
-      width: 100%;
-      box-sizing: border-box;
-    }
+  background: #222;
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1rem;
+  border-top: 2px solid #444;
+  color: #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
   </style>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
@@ -223,6 +224,9 @@
   <footer>
     © 2025 Miles Swarner • Website designed and built by Miles Swarner<br>
     Contact: <a href="mailto:swarner.miles@gmail.com">swarner.miles@gmail.com</a>
-  </footer>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="position: absolute; top: 20px; right: 20px; background-color: #444; color: #fff; border: none; padding: 10px 16px; font-size: 0.9rem; cursor: pointer; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+    Back to Top
+  </button>
+</footer>
 </body>
 </html>
