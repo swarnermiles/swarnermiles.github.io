@@ -25,30 +25,84 @@
       color: black;
       font-size: 1.5rem;
     }
-    .container {
-      max-width: 960px;
-      margin: auto;
+    .flex-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       padding: 40px 20px;
+      gap: 40px;
     }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+    .image-half {
+      flex: 1;
+      min-width: 300px;
+      max-width: 50%;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+    .image-half img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+    }
+    .text-half {
+      flex: 1;
+      min-width: 300px;
+      max-width: 50%;
+      padding: 20px;
+      background: #fff;
+      border: 2px solid #ccc;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+    .text-half h1 {
+      margin-top: 0;
     }
     .tags {
-      margin-bottom: 20px;
+      margin: 10px 0 20px;
       font-size: 1rem;
       color: #666;
     }
-    img {
-      width: 100%;
-      max-height: 1600px;
-      object-fit: cover;
-      border: 2px solid #ccc;
-      margin-bottom: 20px;
-    }
-    p {
+    .text-half p {
       line-height: 1.6;
       font-size: 1.1rem;
+    }
+    .spacer {
+      height: 60px;
+    }
+    .iframe-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 0 20px 40px;
+      scroll-behavior: smooth;
+    }
+    .carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+    .carousel::-webkit-scrollbar-thumb {
+      background-color: #aaa;
+      border-radius: 4px;
+    }
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 320px;
+      height: 200px;
+      border: 2px solid #ccc;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .carousel-item:hover {
+      transform: scale(1.05);
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   </style>
 </head>
@@ -58,19 +112,34 @@
     <a href="index.html">Home</a>
   </header>
 
-  <div class="container">
-    <h1>Suspension Dyno</h1>
-    <div class="tags">Arduino • Mechanical Engineering • Data Acquisition • Bike Testing</div>
-    <img src="images/projects/suspensiondyno/suspensiondyno (1).jpg" alt="Dyno testing graph or detail image">
-    <p>
-      This Arduino-powered suspension dynamometer was designed and built to analyze the compression and rebound characteristics of mountain bike rear shocks. The test rig uses an S-type load cell to measure force and a magnetic rotary encoder to measure displacement, synchronized via serial output. A Scotch yoke drive system ensures smooth cyclic motion.
-    </p>
-    <p>
-      Python is used to parse the incoming serial data in real time, generating live force vs. velocity and force vs. displacement plots. The system allows tuners and riders to visualize damping curves and optimize setup. All components were prototyped, manually machined, and integrated over several months as a senior capstone project.
-    </p>
-    <p>
-      Future plans include motorized automation, battery integration, and open-sourcing the final design for DIY enthusiasts.
-    </p>
+  <div class="flex-row">
+    <div class="image-half">
+      <img src="images/projects/suspensiondyno/suspensiondyno (1).jpg" alt="Suspension Dyno Overview">
+    </div>
+    <div class="text-half">
+      <h1>Suspension Dyno</h1>
+      <div class="tags">Arduino • Mechanical Engineering • Data Acquisition • Bike Testing</div>
+      <p>This Arduino-powered suspension dynamometer was designed and built to analyze the compression and rebound characteristics of mountain bike rear shocks. The test rig uses an S-type load cell to measure force and a magnetic rotary encoder to measure displacement, synchronized via serial output. A Scotch yoke drive system ensures smooth cyclic motion.</p>
+      <p>Python is used to parse the incoming serial data in real time, generating live force vs. velocity and force vs. displacement plots. The system allows tuners and riders to visualize damping curves and optimize setup. All components were prototyped, manually machined, and integrated over several months as a senior capstone project.</p>
+      <p>Future plans include motorized automation, battery integration, and open-sourcing the final design for DIY enthusiasts.</p>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="iframe-container">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ9SRfBojtU8fqBl0LEyJzAGYX286bkuJs_TSeZY1ImzlNzb9icu2aacWF-cohW7S3cDM6HZF6B0WGj/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+  </div>
+
+  <div class="carousel">
+    <div class="carousel-item"><img src="images/projects/suspensiondyno/suspensiondyno (2).jpg" alt="Dyno Image 2"></div>
+    <div class="carousel-item"><img src="images/projects/suspensiondyno/suspensiondyno (3).jpg" alt="Dyno Image 3"></div>
+    <div class="carousel-item"><img src="images/projects/suspensiondyno/suspensiondyno (4).jpg" alt="Dyno Image 4"></div>
+    <div class="carousel-item"><img src="images/projects/suspensiondyno/suspensiondyno (5).jpg" alt="Dyno Image 5"></div>
+    <div class="carousel-item"><img src="images/projects/suspensiondyno/suspensiondyno (6).jpg" alt="Dyno Image 6"></div>
+    <div class="carousel-item"><img src="images/projects/suspensiondyno/suspensiondyno (7).jpg" alt="Dyno Image 7"></div>
+    <div class="carousel-item"><img src="images/projects/suspensiondyno/suspensiondyno (8).jpg" alt="Dyno Image 8"></div>
+    <div class="carousel-item"><img src="images/projects/suspensiondyno/suspensiondyno (9).jpg" alt="Dyno Image 9"></div>
   </div>
 </body>
 </html>
