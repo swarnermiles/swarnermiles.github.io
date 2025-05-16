@@ -8,15 +8,15 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body {
-  margin: 0;
-  font-family: Copperplate, serif;
-  background-color: #fefefe;
-  width: 100%;
-  box-sizing: border-box;
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-}
+      margin: 0;
+      font-family: Copperplate, serif;
+      background-color: #fefefe;
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     header {
       display: flex;
       justify-content: space-between;
@@ -58,6 +58,7 @@
       border: 2px solid #ccc;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
       padding: 20px;
+      position: relative;
     }
     .text-half h1 {
       margin-top: 0;
@@ -71,18 +72,32 @@
       line-height: 1.6;
       font-size: 1.1rem;
     }
+    .sketchfab-embed-wrapper {
+      margin-top: 20px;
+    }
+    .sketchfab-embed-wrapper iframe {
+      width: 100%;
+      height: 600px;
+      border: 2px solid #ccc;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
     .spacer {
       height: 60px;
     }
-    ..iframe-container, .model-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 60px;
-  box-sizing: border-box;
-  padding: 0 20px;
-}
-    $1padding: 40px 20px 60px;
+    .iframe-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 60px;
+      box-sizing: border-box;
+      padding: 0 20px;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      gap: 20px;
+      padding: 40px 20px 60px;
       scroll-behavior: smooth;
     }
     .carousel::-webkit-scrollbar {
@@ -92,13 +107,21 @@
       background-color: #aaa;
       border-radius: 4px;
     }
-    $1
-  z-index: 1;
-$2
-    $1
-  z-index: 2;
-  position: relative;
-}
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 320px;
+      height: 200px;
+      border: 2px solid #ccc;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .carousel-item:hover {
+      transform: scale(1.05);
+      z-index: 2;
+      position: relative;
+    }
     .carousel-item img {
       width: 100%;
       height: 100%;
@@ -120,15 +143,15 @@ $2
       box-shadow: 0 0 20px black;
     }
     footer {
-  background: #f4f4f4;
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 1rem;
-  border-top: 2px solid #ccc;
-  color: #444;
-  width: 100%;
-  box-sizing: border-box;
-}
+      background: #f4f4f4;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 1rem;
+      border-top: 2px solid #ccc;
+      color: #444;
+      width: 100%;
+      box-sizing: border-box;
+    }
   </style>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
@@ -169,19 +192,13 @@ $2
       <p>This Arduino-powered suspension dynamometer was designed and built to analyze the compression and rebound characteristics of mountain bike rear shocks. The test rig uses an S-type load cell to measure force and a magnetic rotary encoder to measure displacement, synchronized via serial output. A Scotch yoke drive system ensures smooth cyclic motion.</p>
       <p>Python is used to parse the incoming serial data in real time, generating live force vs. velocity and force vs. displacement plots. The system allows tuners and riders to visualize damping curves and optimize setup. All components were prototyped, manually machined, and integrated over several months as a senior capstone project.</p>
       <p>Future plans include motorized automation, battery integration, and open-sourcing the final design for DIY enthusiasts.</p>
+      <div class="sketchfab-embed-wrapper">
+        <iframe title="Suspension Dyno V1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+          allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
+          src="https://sketchfab.com/models/8d40fb92a14f424d8be915e20b06d6a1/embed?ui_theme=dark">
+        </iframe>
+      </div>
     </div>
-  </div>
-
-  <div class="model-container" style="position: absolute; top: 740px; right: 40px; width: 48%;">
-  <div class="sketchfab-embed-wrapper" style="width: 100%;">
-    <iframe title="Suspension Dyno V1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
-      allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
-      width="100%" height="600"
-      style="border: 2px solid #ccc; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);"
-      src="https://sketchfab.com/models/8d40fb92a14f424d8be915e20b06d6a1/embed?ui_theme=dark">
-    </iframe>
-  </div>
-</div>
   </div>
 
   <div class="iframe-container">
