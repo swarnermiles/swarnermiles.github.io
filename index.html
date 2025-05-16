@@ -1,149 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Miles Swarner | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miles Swarner 2025</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       margin: 0;
       font-family: Copperplate, serif;
       background-color: #fefefe;
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: #f4f4f4;
-      border-bottom: 2px solid #ccc;
+      background-color: #222;
+      border-bottom: 2px solid #444;
     }
-    h1 {
+    header h1 {
+      color: #ccc;
+      font-size: 2rem;
       margin: 0;
-      font-size: 2.5rem;
     }
-    .menu {
-      position: relative;
-      display: inline-block;
-    }
-    .menu-button {
-      font-size: 1.2rem;
+    nav button {
+      background-color: #444;
+      color: #fff;
+      border: none;
+      padding: 14px 20px;
+      font-size: 0.85rem;
       cursor: pointer;
+      border-radius: 4px;
+      min-width: 120px;
     }
-    .menu-content {
+    .dropdown-menu {
       display: none;
       position: absolute;
       right: 0;
-      background-color: #fff;
-      min-width: 180px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      z-index: 1;
-    }
-    .menu-content a {
-      display: block;
-      padding: 12px 16px;
-      text-decoration: none;
-      color: black;
-    }
-    .menu:hover .menu-content {
-      display: block;
-    }
-    .intro {
-      display: flex;
-      padding: 60px;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .intro-text {
-      flex: 1;
-      font-size: 1.2rem;
-      padding-right: 40px;
-    }
-    .headshot {
-      flex: 1;
-      max-width: 400px;
-      border: 2px solid #ccc;
-      box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
-    }
-    .highlights {
-      margin: 40px;
-    }
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 20px;
-    }
-    .carousel::-webkit-scrollbar {
-      height: 8px;
-    }
-    .carousel::-webkit-scrollbar-thumb {
-      background-color: #aaa;
+      top: 100%;
+      background-color: #333;
+      border: 1px solid #555;
       border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      font-family: Copperplate, serif;
+      animation: fadeIn 0.3s ease;
     }
-    .carousel-item {
-      flex: 0 0 auto;
-      width: 300px;
-      height: 200px;
-      border: 2px solid #ccc;
-      transition: transform 0.3s ease;
-      cursor: pointer;
+    .dropdown-menu a {
+      display: block;
+      padding: 12px 20px;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
     }
-    .carousel-item:hover {
-      transform: scale(1.1);
-      z-index: 2;
+    .dropdown-menu a:hover {
+      background-color: #555;
     }
-    .carousel-item img {
+    .dropdown-menu.show {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+      padding-right: 20px;
+    }
+    .hero-text h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+    }
+    .hero-image img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 40px;
+    }
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .project-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover img {
+      transform: scale(1.05);
+    }
+    .project-title {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      text-align: center;
+      font-size: 1.2rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .project-card:hover .project-title {
+      opacity: 1;
+    }
+    footer {
+      background: #222;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 1rem;
+      border-top: 2px solid #444;
+      color: #ccc;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
     }
   </style>
+  <script>
+    window.addEventListener('click', function(e) {
+      if (!e.target.matches('button')) {
+        var menu = document.getElementById('menu');
+        if (menu && menu.classList.contains('show')) {
+          menu.classList.remove('show');
+        }
+      }
+    });
+  </script>
 </head>
 <body>
-
   <header>
-    <h1>Miles Swarner, 2025</h1>
-    <div class="menu">
-      <div class="menu-button">Menu ▾</div>
-      <div class="menu-content">
+    <h1>Miles Swarner 2025</h1>
+    <nav style="position: relative;">
+      <button onclick="document.getElementById('menu').classList.toggle('show')">Menu</button>
+      <div id="menu" class="dropdown-menu">
+        <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
         <a href="biking.html">Biking</a>
         <a href="music.html">Music</a>
-        <a href="contact.html">Get in Touch</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <section class="intro">
-    <div class="intro-text">
-      <p>Welcome! I'm Miles Swarner, a mechanical engineering student with a passion for hands-on projects, bikes, and music. This site showcases some of my favorite builds and research.</p>
+  <div class="hero">
+    <div class="hero-text">
+      <h2>Welcome!</h2>
+      <p>This is the digital portfolio of Miles Swarner. Explore engineering projects, music, and more below.</p>
     </div>
-    <img src="images/headshot.jpg" alt="Miles Swarner Headshot" class="headshot">
-  </section>
-
-  <section class="highlights">
-    <h2 style="text-align: center;">Highlighted Projects</h2>
-    <div class="carousel">
-      <a href="dyno_detail.html" class="carousel-item">
-        <img src="images/highlight1.jpg" alt="Dyno Project">
-      </a>
-      <a href="hvac_detail.html" class="carousel-item">
-        <img src="images/highlight2.jpg" alt="HVAC Project">
-      </a>
-      <a href="cadbike_detail.html" class="carousel-item">
-        <img src="images/highlight3.jpg" alt="CAD Bike Project">
-      </a>
-      <a href="highlight4.html" class="carousel-item">
-        <img src="images/highlight4.jpg" alt="Project 4">
-      </a>
-      <a href="highlight5.html" class="carousel-item">
-        <img src="images/highlight5.jpg" alt="Project 5">
-      </a>
+    <div class="hero-image">
+      <img src="images/headshot-main (2).JPG" alt="Miles Swarner Headshot">
     </div>
-  </section>
+  </div>
 
+  <div class="grid">
+    <a href="dyno_detail.html" class="project-card">
+      <img src="images/projects/suspensiondyno/suspensiondyno (1).jpg" alt="Suspension Dyno">
+      <div class="project-title">Suspension Dyno</div>
+    </a>
+    <a href="AnodizingProject.html" class="project-card">
+      <img src="images/projects/anodizingstation/anodizingstation (1).JPEG" alt="Anodizing Station">
+      <div class="project-title">Anodizing Station</div>
+    </a>
+    <a href="ChessPiecesProject.html" class="project-card">
+      <img src="images/projects/pltwchesspieces/pltwchesspieces (3).jpg" alt="PLTW Chess Pieces">
+      <div class="project-title">PLTW Chess Pieces</div>
+    </a>
+  </div>
+
+  <footer>
+    © 2025 Miles Swarner • Website designed and built by Miles Swarner<br>
+    Contact: <a href="mailto:swarner.miles@gmail.com">swarner.miles@gmail.com</a>
+  </footer>
 </body>
 </html>
