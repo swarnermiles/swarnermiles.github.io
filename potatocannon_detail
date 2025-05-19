@@ -1,0 +1,68 @@
+<!-- Potato Cannon Detail Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Potato Cannon | Miles Swarner</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Insert styling and scripting from template here -->
+</head>
+<body>
+  <header>
+    <div>
+      <a href="projects.html">← Back to Projects</a>
+    </div>
+    <nav style="position: relative;">
+      <button onclick="document.getElementById('menu').classList.toggle('show')">Menu</button>
+      <div id="menu" class="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="biking.html">Biking</a>
+        <a href="music.html">Music</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+    <script>
+      window.addEventListener('click', function(e) {
+        if (!e.target.matches('button')) {
+          var menu = document.getElementById('menu');
+          if (menu && menu.classList.contains('show')) {
+            menu.classList.remove('show');
+          }
+        }
+      });
+    </script>
+  </header>
+
+  <div class="flex-row">
+    <div class="image-half">
+      <img src="images/projects/potatocannon/potatocannon (1).jpg" alt="Potato Cannon Thumbnail">
+    </div>
+    <div class="text-half">
+      <h1>Potato Cannon</h1>
+      <div class="tags">AP Physics 1 • Ballistics • PVC Construction</div>
+      <p><!-- Description placeholder --></p>
+      <p><!-- More detail here --></p>
+    </div>
+  </div>
+
+  <div class="iframe-container">
+    <!-- Optional embedded media -->
+  </div>
+
+  <div class="carousel">
+    <div class="carousel-item"><img src="images/projects/potatocannon/potatocannon (1).jpg" alt="Potato Cannon Image 1"></div>
+    <div class="carousel-item"><img src="images/projects/potatocannon/potatocannon (2).jpg" alt="Potato Cannon Image 2"></div>
+    <div class="carousel-item"><img src="images/projects/potatocannon/potatocannon (3).jpg" alt="Potato Cannon Image 3"></div>
+  </div>
+
+  <footer>
+    © 2025 Miles Swarner • Website designed and built by Miles Swarner<br>
+    Contact: <a href="mailto:swarner.miles@gmail.com">swarner.miles@gmail.com</a>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="position: absolute; top: 20px; right: 20px; background-color: #444; color: #fff; border: none; padding: 10px 16px; font-size: 0.9rem; cursor: pointer; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+      Back to Top
+    </button>
+  </footer>
+</body>
+</html>
