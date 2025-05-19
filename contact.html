@@ -151,7 +151,7 @@
   <header>
     <h1><a href="index.html">← Miles Swarner</a></h1>
     <nav style="position: relative;">
-      <button onclick="document.getElementById('menu').classList.toggle('show')">Menu</button>
+      <button id="menu-toggle">Menu</button>
       <div id="menu" class="dropdown-menu">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
@@ -178,12 +178,21 @@
   Contact: <a href="mailto:swarner.miles@gmail.com">swarner.miles@gmail.com</a>
 </footer>
 <script>
-  window.addEventListener("click", function(e) {
-    if (!e.target.matches("button")) {
-      var menu = document.getElementById("menu");
-      if (menu && menu.classList.contains("show")) {
-        menu.classList.remove("show");
-      }
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    if (menuButton && menu) {
+      menuButton.addEventListener("click", function (e) {
+        e.stopPropagation();
+        menu.classList.toggle("show");
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!menu.contains(e.target) && e.target !== menuButton) {
+          menu.classList.remove("show");
+        }
+      });
     }
   });
 </script>
