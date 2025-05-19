@@ -59,12 +59,12 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: #f4f4f4;
-      border-bottom: 2px solid #ccc;
+      background-color: #222;
+      border-bottom: 2px solid #444;
     }
     header a {
       text-decoration: none;
-      color: black;
+      color: #ccc;
       font-size: 1.5rem;
     }
     .dropdown {
@@ -210,5 +210,15 @@
   © 2025 Miles Swarner • Website designed and built by Miles Swarner<br>
   Contact: <a href="mailto:swarner.miles@gmail.com">swarner.miles@gmail.com</a>
 </footer>
+<script>
+  window.addEventListener("click", function(e) {
+    if (!e.target.matches("button")) {
+      var menu = document.getElementById("menu");
+      if (menu && menu.classList.contains("show")) {
+        menu.classList.remove("show");
+      }
+    }
+  });
+</script>
 </body>
 </html>
