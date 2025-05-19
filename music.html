@@ -7,56 +7,88 @@
   <title>Music | Miles Swarner</title>
   <link rel="stylesheet" href="style.css">
   <style>
-   body {
-  margin: 0;
-  font-family: Copperplate, serif;
-  background-color: #fefefe;
-}
-
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: #f4f4f4;
-      border-bottom: 2px solid #ccc;
+      background-color: #222;
+      border-bottom: 2px solid #444;
     }
     header a {
       text-decoration: none;
-      color: black;
+      color: #ccc;
       font-size: 1.5rem;
+      font-weight: normal;
+    }
+    nav button {
+      background-color: #444;
+      color: #fff;
+      border: none;
+      padding: 14px 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border-radius: 4px;
+      min-width: 120px;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: #333;
+      border: 1px solid #555;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      font-family: Copperplate, serif;
+      animation: fadeIn 0.3s ease;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 12px 20px;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+    .dropdown-menu a:hover {
+      background-color: #555;
+    }
+    .dropdown-menu.show {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    body {
+      margin: 0;
+      font-family: Copperplate, serif;
+      background-color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #222;
+      border-bottom: 2px solid #444;
+    }
+    header a {
+      text-decoration: none;
+      color: #ccc;
+      font-size: 1.5rem;
+      font-weight: normal;
     }
     .dropdown {
       position: relative;
       display: inline-block;
     }
-    .dropdown-button {
-      background-color: transparent;
-      border: none;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      right: 0;
-      background-color: #fff;
-      min-width: 180px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      z-index: 1;
-    }
-    .dropdown-content a {
-      display: block;
-      padding: 12px 16px;
-      text-decoration: none;
-      color: black;
-    }
+    
+    
+    
     .dropdown:hover .dropdown-content {
       display: block;
     }
@@ -116,22 +148,34 @@
       color: #000;
       font-size: 1rem;
     }
-  </style>
+      footer {
+      background: #222;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 1rem;
+      border-top: 2px solid #444;
+      color: #ccc;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+    }
+</style>
 </head>
 <body>
   <header>
-    <a href="index.html">← Miles Swarner</a>
-    <div class="dropdown">
-      <button class="dropdown-button">Menu ▾</button>
-      <div class="dropdown-content">
-        <a href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a href="biking.html">Biking</a>
-        <a href="music.html">Music</a>
-        <a href="contact.html">Get in Touch</a>
-      </div>
+  <a href="index.html">← Miles Swarner</a>
+  <nav style="position: relative;">
+    <button onclick="document.getElementById('menu').classList.toggle('show')">Menu</button>
+    <div id="menu" class="dropdown-menu">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="biking.html">Biking</a>
+      <a href="music.html">Music</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Get in Touch</a>
     </div>
-  </header>
+  </nav>
+</header>
 
   <div class="container">
     <h1>My Music</h1>
@@ -159,5 +203,19 @@
       </ul>
     </div>
   </div>
+<footer>
+  © 2025 Miles Swarner • Website designed and built by Miles Swarner<br>
+  Contact: <a href="mailto:swarner.miles@gmail.com">swarner.miles@gmail.com</a>
+</footer>
+<script>
+  window.addEventListener("click", function(e) {
+    if (!e.target.matches("button")) {
+      var menu = document.getElementById("menu");
+      if (menu && menu.classList.contains("show")) {
+        menu.classList.remove("show");
+      }
+    }
+  });
+</script>
 </body>
 </html>

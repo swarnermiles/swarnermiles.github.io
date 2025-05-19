@@ -7,18 +7,11 @@
   <title>Projects | Miles Swarner</title>
   <link rel="stylesheet" href="style.css">
   <style>
-   body {
+    body {
   margin: 0;
   font-family: Copperplate, serif;
   background-color: #fefefe;
 }
-
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
     header {
   display: flex;
   justify-content: space-between;
@@ -117,13 +110,53 @@
       box-sizing: border-box;
       position: relative;
     }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: #333;
+      border: 1px solid #555;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      font-family: Copperplate, serif;
+      animation: fadeIn 0.3s ease;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 12px 20px;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+    .dropdown-menu a:hover {
+      background-color: #555;
+    }
+    .dropdown-menu.show {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 </style>
 </head>
 <body>
   <header>
     <h1><a href="index.html">← Miles Swarner</a></h1>
-    <nav>
-      <a href="index.html">Home</a>
+    <nav style="position: relative;">
+      <button id="menu-toggle" style="background-color: #444; color: #fff; border: none; padding: 14px 20px; font-size: 0.85rem; cursor: pointer; border-radius: 4px; min-width: 120px;">Menu</button>
+      <div id="menu" class="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="biking.html">Biking</a>
+        <a href="music.html">Music</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </nav>
   </header>
 
@@ -141,5 +174,24 @@
   © 2025 Miles Swarner • Website designed and built by Miles Swarner<br>
   Contact: <a href="mailto:swarner.miles@gmail.com">swarner.miles@gmail.com</a>
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    if (menuButton && menu) {
+      menuButton.addEventListener("click", function (e) {
+        e.stopPropagation();
+        menu.classList.toggle("show");
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!menu.contains(e.target) && e.target !== menuButton) {
+          menu.classList.remove("show");
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>
