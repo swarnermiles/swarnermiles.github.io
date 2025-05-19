@@ -111,7 +111,7 @@
       transition: opacity 0.3s ease;
     }
     .project-card:hover img {
-      filter: grayscale(30%) brightness(80%);
+      filter: grayscale(60%) brightness(60%);
       transform: scale(1.05);
     }
     .project-card:hover .project-title {
@@ -128,7 +128,45 @@
       box-sizing: border-box;
       position: relative;
     }
-  </style>
+      .project-card {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    .project-card:nth-child(1) { animation-delay: 0.1s; }
+    .project-card:nth-child(2) { animation-delay: 0.2s; }
+    .project-card:nth-child(3) { animation-delay: 0.3s; }
+    .project-card:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .project-card:hover {
+      outline: 2px solid #333;
+      outline-offset: -2px;
+    }
+
+    .tag-label {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      background-color: #000;
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 4px 6px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      z-index: 2;
+    }
+</style>
   <script>
     window.addEventListener('click', function(e) {
       if (!e.target.matches('button')) {
@@ -158,9 +196,8 @@
   </header>
 
   <div class="grid">
-    <a href="dyno_detail.html" class="project-card">
-      <img src="images/projects/suspensiondyno/suspensiondyno (1).jpg" alt="Suspension Dyno">
-      <div class="project-title">Suspension Dyno</div>
+    $1
+      <div class="tag-label">NEW</div>$2<div class="project-title">Suspension Dyno</div>
     </a>
     <a href="anodizingstation_detail.html" class="project-card">
       <img src="images/projects/anodizingstation/anodizingstation (1).JPEG" alt="Anodizing Station">
