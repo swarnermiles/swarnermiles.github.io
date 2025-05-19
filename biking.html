@@ -30,6 +30,10 @@
       font-family: Copperplate, serif;
       animation: fadeIn 0.3s ease;
     }
+
+    .dropdown-menu.show {
+      display: block;
+    }
     .dropdown-menu a {
       display: block;
       padding: 12px 20px;
@@ -159,7 +163,7 @@
   <a href="index.html">← Miles Swarner</a>
   <nav style="position: relative;">
     <button onclick="document.getElementById('menu').classList.toggle('show')">Menu</button>
-    <div id="menu" class="dropdown-menu">
+    <div id="menu" class="dropdown-menu show">
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
       <a href="biking.html">Biking</a>
