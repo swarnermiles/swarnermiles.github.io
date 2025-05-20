@@ -99,6 +99,7 @@
       object-position: center;
       display: block;
       transition: all 0.3s ease;
+      border-radius: 6px;
     }
     .project-title {
       position: absolute;
@@ -156,6 +157,26 @@
     
 
     
+    .gallery-title {
+      width: 100%;
+      
+      position: sticky;
+      background: linear-gradient(to bottom, #fefefe 98%, transparent);
+      top: 0;
+      z-index: 500;
+      background-color: #fefefe;
+      text-align: left;
+      font-size: 3.2rem;
+      margin: 120px 0 160px 60px;
+      width: calc(100% - 120px);
+      border-bottom: 2px solid #ccc;
+      display: inline-block;
+      padding-bottom: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 0.05s;
+    }
 </style>
   <script>
     window.addEventListener('click', function(e) {
@@ -183,7 +204,7 @@
     </nav>
   </header>
 
-  <h2 style="text-align: center; font-size: 1.8rem; margin: 40px 0 20px; border-bottom: 2px solid #ccc; display: inline-block; padding-bottom: 10px;">Project Gallery</h2>
+  <h2 class="gallery-title" style="margin: 120px 0 160px 0; width: 100%; border-bottom: 2px solid #ccc; padding-bottom: 10px; padding-left: 60px;">Project Gallery</h2>
   <div class="grid">
         <a href="dyno_detail.html" class="project-card">
       <img src="images/projects/suspensiondyno/suspensiondyno (1).jpg" alt="Suspension Dyno">
@@ -201,12 +222,75 @@
     <a href="potatocannon_detail.html" class="project-card">
       <img src="images/projects/potatocannon/potatocannon (11).jpg" alt="Potato Cannon">
       <div class="project-title">Potato Cannon</div>
+    
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image1.jpg" alt="Placeholder Project">
+      <div class="project-title">Lorem Ipsum</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image2.jpg" alt="Placeholder Project">
+      <div class="project-title">Dolor Sit</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image3.jpg" alt="Placeholder Project">
+      <div class="project-title">Amet Consectetur</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image4.jpg" alt="Placeholder Project">
+      <div class="project-title">Adipiscing Elit</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image5.jpg" alt="Placeholder Project">
+      <div class="project-title">Sed Do</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image6.jpg" alt="Placeholder Project">
+      <div class="project-title">Eiusmod Tempor</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image7.jpg" alt="Placeholder Project">
+      <div class="project-title">Incididunt</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image8.jpg" alt="Placeholder Project">
+      <div class="project-title">Ut Labore</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image9.jpg" alt="Placeholder Project">
+      <div class="project-title">Et Dolore</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image10.jpg" alt="Placeholder Project">
+      <div class="project-title">Magna Aliqua</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image11.jpg" alt="Placeholder Project">
+      <div class="project-title">Ut Enim</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image12.jpg" alt="Placeholder Project">
+      <div class="project-title">Minim Veniam</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image13.jpg" alt="Placeholder Project">
+      <div class="project-title">Quis Nostrud</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image14.jpg" alt="Placeholder Project">
+      <div class="project-title">Exercitation</div>
+    </a>
+    <a href="#" class="project-card">
+      <img src="images/projects/template/image15.jpg" alt="Placeholder Project">
+      <div class="project-title">Ullamco</div>
     </a>
   </div>
-
-  <footer>
+<footer>
     © 2025 Miles Swarner • Website designed and built by Miles Swarner<br>
     Contact: <a href="mailto:swarner.miles@gmail.com">swarner.miles@gmail.com</a>
-  </footer>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="margin-top: 30px; background-color: #444; color: #fff; border: none; padding: 12px 20px; font-size: 0.9rem; cursor: pointer; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+    Back to Top
+  </button>
+</footer>
+
 </body>
 </html>
