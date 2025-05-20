@@ -84,10 +84,13 @@
       position: relative;
       width: 100%;
       aspect-ratio: 1 / 1.1;
-      overflow: hidden;
+      overflow: visible;
       border-radius: 6px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
     }
     .project-card img {
       width: 100%;
@@ -152,8 +155,9 @@
 
     .tag-label {
       position: absolute;
-      left: 0;
-      top: 10px;
+      left: -24px;
+      top: 50%;
+      transform: translateY(-50%) rotate(180deg);
       background-color: #000;
       color: #fff;
       font-size: 0.7rem;
@@ -164,7 +168,8 @@
       letter-spacing: 0.05em;
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
-      z-index: 2;
+      z-index: 10;
+      pointer-events: none;
     }
 </style>
   <script>
@@ -180,9 +185,7 @@
 </head>
 <body>
   <header>
-    <div>
-      <a href="index.html">← Home</a>
-    </div>
+    <h1 style="color: #ccc; font-size: 2rem; margin: 0;">Miles Swarner 2025</h1>
     <nav style="position: relative;">
       <button onclick="document.getElementById('menu').classList.toggle('show')">Menu</button>
       <div id="menu" class="dropdown-menu">
@@ -195,19 +198,26 @@
     </nav>
   </header>
 
+  <h2 style="text-align: center; font-size: 1.8rem; margin: 40px 0 20px; border-bottom: 2px solid #ccc; display: inline-block; padding-bottom: 10px;">Project Gallery</h2>
   <div class="grid">
-    $1
-      <div class="tag-label">NEW</div>$2<div class="project-title">Suspension Dyno</div>
+        <a href="dyno_detail.html" class="project-card">
+      <div class="tag-label">NEW</div>
+      <img src="images/projects/suspensiondyno/suspensiondyno (1).jpg" alt="Suspension Dyno">
+      <div class="project-title">Suspension Dyno</div>
     </a>
-    <a href="anodizingstation_detail.html" class="project-card">
+    </a><a href="anodizingstation_detail.html" class="project-card">
+      <div class="tag-label">NEW</div>
       <img src="images/projects/anodizingstation/anodizingstation (1).JPEG" alt="Anodizing Station">
       <div class="project-title">Anodizing Station</div>
     </a>
+    </a>
     <a href="pltwchesspieces_detail.html" class="project-card">
+      <div class="tag-label">NEW</div>
       <img src="images/projects/pltwchesspieces/pltwchesspieces (3).jpg" alt="PLTW Chess Pieces">
       <div class="project-title">PLTW Chess Pieces</div>
     </a>
     <a href="potatocannon_detail.html" class="project-card">
+      <div class="tag-label">NEW</div>
       <img src="images/projects/potatocannon/potatocannon (11).jpg" alt="Potato Cannon">
       <div class="project-title">Potato Cannon</div>
     </a>
