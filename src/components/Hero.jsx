@@ -1,8 +1,6 @@
 "use client";
-/* eslint-disable no-unused-vars */
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
-/* eslint-enable no-unused-vars */
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -38,7 +36,7 @@ export default function Hero() {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: "url('/photos/site/hero-bg.webp')",
+          backgroundImage: `url('${import.meta.env.BASE_URL}photos/site/hero-bg.webp')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -64,7 +62,7 @@ export default function Hero() {
         }}
       >
         <motion.img
-          src="/photos/site/headshot.webp"
+          src={`${import.meta.env.BASE_URL}photos/site/headshot.webp`}
           alt="Miles Swarner"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
